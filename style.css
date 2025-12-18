@@ -1,0 +1,247 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #c9a9eb 0%, #2575fc 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: #333;
+    line-height: 1.6;
+}
+
+#app {
+    max-width: 800px;
+    width: 90%;
+    margin: 40px auto;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    backdrop-filter: blur(10px);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-top: 30px;
+}
+
+h1 {
+    color: white;
+    font-size: 2.8rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(to right, #000000, #000000);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+#task-form {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+#text-input {
+    flex: 1;
+    min-width: 250px;
+    padding: 18px 25px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    background: #f8f9fa;
+    box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+#text-input:focus {
+    outline: none;
+    border-color: #6a11cb;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(106, 17, 203, 0.1);
+}
+
+#button_submit {
+    padding: 18px 35px;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(37, 117, 252, 0.4);
+}
+
+#button_submit:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(37, 117, 252, 0.6);
+}
+
+#button_submit:active {
+    transform: translateY(1px);
+}
+
+#task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.task-item {
+    background: white;
+    padding: 20px 25px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    animation: fadeIn 0.5s ease;
+}
+
+.task-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.task-text {
+    flex: 1;
+    font-size: 1.1rem;
+    color: #333;
+    word-break: break-word;
+}
+
+.task-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.task-checkbox {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    accent-color: #6a11cb;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.task-checkbox:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 6px rgba(106, 17, 203, 0.4);
+}
+
+.task-checkbox:checked {
+    transform: scale(1.15);
+    box-shadow: 0 0 8px rgba(37, 117, 252, 0.5);
+}
+.delete-btn, .complete-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.complete-btn {
+    background: linear-gradient(135deg, #4CAF50, #45a049);
+    color: white;
+}
+
+.delete-btn {
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    color: white;
+}
+
+.complete-btn:hover, .delete-btn:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+.task-item.completed .task-text {
+    text-decoration: line-through;
+    color: #888;
+    opacity: 0.7;
+}
+
+.task-item.completed {
+    background: #f8f9fa;
+}
+
+footer {
+    margin-top: 24%;
+    text-align: center;
+    padding: 25px;
+    color: white;
+    font-size: 1rem;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+footer p {
+    opacity: 0.9;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    #app {
+        padding: 25px;
+        margin: 20px auto;
+    }
+    
+    h1 {
+        font-size: 2.2rem;
+    }
+    
+    #task-form {
+        flex-direction: column;
+    }
+    
+    #text-input, #button_submit {
+        width: 100%;
+    }
+    
+    .task-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .task-actions {
+        align-self: flex-end;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    #app {
+        padding: 20px;
+        width: 95%;
+    }
+    
+    .delete-btn, .complete-btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}
