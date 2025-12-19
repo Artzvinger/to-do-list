@@ -2,7 +2,7 @@
 ![CSS3](https://img.shields.io/badge/CSS3-blue?logo=css3)
 ![JavaScript](https://img.shields.io/badge/JavaScript-yellow?logo=javascript)
 
-# Smart To-Do List
+# Список задач
 
 **Веб-приложение для управления задачами**, созданное с использованием **HTML5, CSS3 и JavaScript**.  
 Поддерживает сохранение списка в **LocalStorage** и имеет современный адаптивный интерфейс.
